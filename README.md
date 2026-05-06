@@ -92,7 +92,7 @@ Speculative | 4 | 112.62 | 8.88             | 0.35x   | 37.6%      | 8.88       
 Speculative | 8 | 72.86  | 13.73            | 0.23x   | 19.3%      | 13.73       |
 
 
-After slight optimizations (main3.py)
+## After slight optimizations (main3.py)
 
 Method      | k | tok/s  | avg latency (ms) | speedup | acceptance | runtime (s) |
 ------------|---|-------:|-----------------:|--------:|-----------:|------------:|
