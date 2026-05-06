@@ -83,6 +83,7 @@ Here speculative can **beat greedy for moderate `k`** because verifier work is a
 
 ## Performance Results with KV cache (main2.py)
 
+
 Method      | k | tok/s  | avg latency (ms) | speedup | acceptance | runtime (s) |
 ------------|---|-------:|-----------------:|--------:|-----------:|------------:|
 Greedy      | - | 320.37 | 3.12             | 1.00x   | -          | 3.12        |
@@ -91,7 +92,7 @@ Speculative | 4 | 112.62 | 8.88             | 0.35x   | 37.6%      | 8.88       
 Speculative | 8 | 72.86  | 13.73            | 0.23x   | 19.3%      | 13.73       |
 
 
-## After slight optimizations (main3.py)
+## After slight optimizations (main3.py) - verification in chunks
 
 Method      | k | tok/s  | avg latency (ms) | speedup | acceptance | runtime (s) |
 ------------|---|-------:|-----------------:|--------:|-----------:|------------:|
