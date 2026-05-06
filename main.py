@@ -24,18 +24,17 @@ DEVICE_VERIFY = torch.device("cuda:1")
 MODEL_DRAFT = "distilgpt2"
 MODEL_TARGET = "gpt2"
 
-# Ten short openers; wording is original to avoid overlap with reused benchmark lists elsewhere.
 OPENERS: Sequence[str] = (
-    "After years of radio silence, the probe finally",
-    "The trial ended early because evidence showed",
-    "Inside the cramped lab, no one predicted that",
-    "Before electricity was common, cities relied on",
-    "The glacier moved slower than rumor suggested, yet",
-    "Investors shrugged once the regulators clarified",
-    "Through the canyon, echoes carried further than",
-    "The debugger stopped on a branch that never",
-    "Folk stories insisted the lighthouse had been dark since",
-    "When the rover crossed the ridge, telemetry showed",
+    "Once upon a time",
+    "The meaning of life is",
+    "In a surprising turn of events,",
+    "Machine learning models",
+    "At the edge of the universe,",
+    "The chef placed",
+    "During the experiment,",
+    "Across the city,",
+    "A small robot discovered",
+    "Five years from now,",
 )
 
 
