@@ -1,0 +1,85 @@
+{
+  "config": {
+    "draft_model": "distilgpt2",
+    "target_model": "gpt2",
+    "max_new_tokens": 100,
+    "ks": [
+      2,
+      4,
+      8
+    ],
+    "prompts": [
+      "Once upon a time",
+      "The meaning of life is",
+      "In a surprising turn of events,",
+      "Machine learning models",
+      "At the edge of the universe,",
+      "The chef placed",
+      "During the experiment,",
+      "Across the city,",
+      "A small robot discovered",
+      "Five years from now,"
+    ],
+    "seed": 1234,
+    "output_json": "benchmark_results_main4_no_kv.json",
+    "smoke_test": false
+  },
+  "devices": {
+    "draft_device": "cuda:0",
+    "target_device": "cuda:1",
+    "num_cuda_devices": 2,
+    "dtype": "float16",
+    "kv_cache": false
+  },
+  "note": "No KV cache: all forwards use use_cache=False (full-sequence recompute).",
+  "results": [
+    {
+      "method": "Greedy",
+      "k": null,
+      "total_runtime_s": 3.3340043546631932,
+      "total_tokens": 1000,
+      "tokens_per_sec": 299.93962023514564,
+      "avg_latency_ms": 3.3340043546631932,
+      "speedup_vs_greedy": 1.0,
+      "mean_acceptance_rate": null,
+      "proposed_tokens": null,
+      "accepted_tokens": null
+    },
+    {
+      "method": "Speculative",
+      "k": 2,
+      "total_runtime_s": 5.440276510082185,
+      "total_tokens": 1000,
+      "tokens_per_sec": 183.81418630960235,
+      "avg_latency_ms": 5.440276510082185,
+      "speedup_vs_greedy": 0.6128372976050858,
+      "mean_acceptance_rate": 0.9059810846081278,
+      "proposed_tokens": 1107,
+      "accepted_tokens": 1000
+    },
+    {
+      "method": "Speculative",
+      "k": 4,
+      "total_runtime_s": 5.870393790304661,
+      "total_tokens": 1000,
+      "tokens_per_sec": 170.34632355525542,
+      "avg_latency_ms": 5.870393790304661,
+      "speedup_vs_greedy": 0.5679353845340869,
+      "mean_acceptance_rate": 0.7459415382071418,
+      "proposed_tokens": 1363,
+      "accepted_tokens": 1000
+    },
+    {
+      "method": "Speculative",
+      "k": 8,
+      "total_runtime_s": 6.9168216763064265,
+      "total_tokens": 1000,
+      "tokens_per_sec": 144.5750731763839,
+      "avg_latency_ms": 6.9168216763064265,
+      "speedup_vs_greedy": 0.4820139235458138,
+      "mean_acceptance_rate": 0.5448667998216282,
+      "proposed_tokens": 1948,
+      "accepted_tokens": 1000
+    }
+  ]
+}

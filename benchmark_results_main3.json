@@ -1,0 +1,83 @@
+{
+  "config": {
+    "draft_model": "distilgpt2",
+    "target_model": "gpt2",
+    "max_new_tokens": 100,
+    "ks": [
+      2,
+      4,
+      8
+    ],
+    "prompts": [
+      "Once upon a time",
+      "The meaning of life is",
+      "In a surprising turn of events,",
+      "Machine learning models",
+      "At the edge of the universe,",
+      "The chef placed",
+      "During the experiment,",
+      "Across the city,",
+      "A small robot discovered",
+      "Five years from now,"
+    ],
+    "seed": 1234,
+    "output_json": "benchmark_results.json",
+    "smoke_test": false
+  },
+  "devices": {
+    "draft_device": "cuda:0",
+    "target_device": "cuda:1",
+    "num_cuda_devices": 2,
+    "dtype": "float16"
+  },
+  "results": [
+    {
+      "method": "Greedy",
+      "k": null,
+      "total_runtime_s": 3.1904131593182683,
+      "total_tokens": 1000,
+      "tokens_per_sec": 313.43902813317175,
+      "avg_latency_ms": 3.1904131593182683,
+      "speedup_vs_greedy": 1.0,
+      "mean_acceptance_rate": null,
+      "proposed_tokens": null,
+      "accepted_tokens": null
+    },
+    {
+      "method": "Speculative",
+      "k": 2,
+      "total_runtime_s": 5.93862029351294,
+      "total_tokens": 1000,
+      "tokens_per_sec": 168.38928077155418,
+      "avg_latency_ms": 5.93862029351294,
+      "speedup_vs_greedy": 0.5372313772617051,
+      "mean_acceptance_rate": 0.8456466442099578,
+      "proposed_tokens": 1206,
+      "accepted_tokens": 1000
+    },
+    {
+      "method": "Speculative",
+      "k": 4,
+      "total_runtime_s": 7.1300784051418304,
+      "total_tokens": 1000,
+      "tokens_per_sec": 140.25091214689218,
+      "avg_latency_ms": 7.1300784051418304,
+      "speedup_vs_greedy": 0.4474583557198351,
+      "mean_acceptance_rate": 0.5928345606810552,
+      "proposed_tokens": 1922,
+      "accepted_tokens": 1000
+    },
+    {
+      "method": "Speculative",
+      "k": 8,
+      "total_runtime_s": 5.997488835826516,
+      "total_tokens": 1000,
+      "tokens_per_sec": 166.73645043345707,
+      "avg_latency_ms": 5.997488835826516,
+      "speedup_vs_greedy": 0.5319581656009196,
+      "mean_acceptance_rate": 0.48577836964018395,
+      "proposed_tokens": 2230,
+      "accepted_tokens": 1000
+    }
+  ]
+}
