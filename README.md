@@ -40,7 +40,7 @@ It prints a result table and writes `benchmark_results.json`.
 ## Design Decisions
 
 - Used `distilgpt2` as draft and `gpt2` as target for a simple, assignment-aligned pair.
-- Explicit multi-GPU placement: draft on `cuda:0`, target on `cuda:1`.
+- Explicit multi-GPU placement: draft on `cuda:0`, target on `cuda:1`. Used 2x RTX 5090 of 32gb RAM.
 - Both decoding paths use KV-cache (`use_cache=True`) to avoid recomputing full context each step.
 - A short warmup run before timing to reduce one-time kernel startup noise.
 - Speculative runs report **acceptance rate** (draft proposals that match the target’s greedy next token) to interpret throughput.
