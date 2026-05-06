@@ -13,7 +13,6 @@ Use a machine with at least two CUDA GPUs for the intended run:
 - Draft model on `cuda:0`
 - Target model on `cuda:1`
 
-Optional: set `HF_TOKEN` for higher Hugging Face Hub rate limits on first-time model download.
 
 ## Run
 
