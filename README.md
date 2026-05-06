@@ -84,20 +84,20 @@ Here speculative can **beat greedy for moderate `k`** because verifier work is a
 
 ## Performance Results with KV cache (main2.py)
 
-Method      | k | tok/s  | avg latency (ms) | speedup | acceptance | runtime (s)
-------------+---+--------+------------------+---------+------------+------------
-Greedy      | - | 320.37 | 3.12             | 1.00x   | -          | 3.12       
-Speculative | 2 | 146.53 | 6.82             | 0.46x   | 66.1%      | 6.82       
-Speculative | 4 | 112.62 | 8.88             | 0.35x   | 37.6%      | 8.88       
-Speculative | 8 | 72.86  | 13.73            | 0.23x   | 19.3%      | 13.73  
+Method      | k | tok/s  | avg latency (ms) | speedup | acceptance | runtime (s) |
+------------|---|-------:|-----------------:|--------:|-----------:|------------:|
+Greedy      | - | 320.37 | 3.12             | 1.00x   | -          | 3.12        |
+Speculative | 2 | 146.53 | 6.82             | 0.46x   | 66.1%      | 6.82        |
+Speculative | 4 | 112.62 | 8.88             | 0.35x   | 37.6%      | 8.88        |
+Speculative | 8 | 72.86  | 13.73            | 0.23x   | 19.3%      | 13.73       |
 
 
 After slight optimizations (main3.py)
 
-Method      | k | tok/s  | avg latency (ms) | speedup | acceptance | runtime (s)
-------------+---+--------+------------------+---------+------------+------------
-Greedy      | - | 313.44 | 3.19             | 1.00x   | -          | 3.19       
-Speculative | 2 | 168.39 | 5.94             | 0.54x   | 84.6%      | 5.94       
-Speculative | 4 | 140.25 | 7.13             | 0.45x   | 59.3%      | 7.13       
-Speculative | 8 | 166.74 | 6.00             | 0.53x   | 48.6%      | 6.00  
+Method      | k | tok/s  | avg latency (ms) | speedup | acceptance | runtime (s) |
+------------|---|-------:|-----------------:|--------:|-----------:|------------:|
+Greedy      | - | 313.44 | 3.19             | 1.00x   | -          | 3.19        |
+Speculative | 2 | 168.39 | 5.94             | 0.54x   | 84.6%      | 5.94        |
+Speculative | 4 | 140.25 | 7.13             | 0.45x   | 59.3%      | 7.13        |
+Speculative | 8 | 166.74 | 6.00             | 0.53x   | 48.6%      | 6.00        |
 
